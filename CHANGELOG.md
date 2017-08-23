@@ -1,4 +1,4 @@
-## FUTURE
+## 0.1.1
 
 * [ADDED] `Sequelize.prototype.loadModels` method
 
