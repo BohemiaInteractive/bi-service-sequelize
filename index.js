@@ -1,7 +1,9 @@
-var _          = require('lodash');
-var Sequelize  = require('sequelize');
-var semver     = require('semver');
-var penetrator = require('./lib/penetrator.js');
+const _          = require('lodash');
+const path       = require('path');
+const Sequelize  = require('sequelize');
+const Service    = require('bi-service');
+const semver     = require('semver');
+const penetrator = require('./lib/penetrator.js');
 
 module.exports = sequelizeBuilder;
 
@@ -140,3 +142,31 @@ Sequelize.Sequelize.prototype.inspectIntegrity = function() {
         return true;
     });
 };
+
+/**
+ * @public
+ * @param {Array|String} paths - collection of files/directories, or single string path
+ * @param {Object}       [options]
+ * @param {Array}        [options.except] - collection of files/directories that should be excluded
+ *
+ * @return {Object}
+ */
+Sequelize.Sequelize.prototype.loadModels = function loadModels(paths, options) {
+
+    var dict       = {}
+    ,   sequelize  = this;
+
+    Service.moduleLoader.fileIterator(paths, options, function(file, dir) {
+        var pth = path.join(dir, file);
+        var model = sequelize.import(pth);
+        dict[model.name] = model;
+    });
+
+    Object.keys(dict).forEach(function(modelName) {
+      if ("associate" in dict[modelName]) {
+        dict[modelName].associate(dict);
+      }
+    });
+
+    return dict;
+}
