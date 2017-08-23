@@ -1,6 +1,6 @@
 {
     "name": "bi-service-sequelize",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "sequelize integration plugin for bi-service based projects",
     "main": "index.js",
     "scripts": {
