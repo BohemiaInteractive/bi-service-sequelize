@@ -17,7 +17,6 @@
     "author": "Bohemia Interactive",
     "private": false,
     "peerDependencies": {
-        "couchbase": "^2.1.6",
         "pg": "^4.5.0",
         "pg-hstore": "2.3.*",
         "bi-service": ">=0.15.3"
