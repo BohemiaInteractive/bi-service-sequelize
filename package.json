@@ -16,6 +16,12 @@
     ],
     "author": "Bohemia Interactive",
     "private": false,
+    "files": [
+        "lib",
+        "CHANGELOG.md",
+        "README.md",
+        "index.js"
+    ],
     "peerDependencies": {
         "couchbase": "^2.1.6",
         "pg": "^4.5.0",
