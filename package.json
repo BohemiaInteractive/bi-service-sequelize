@@ -25,7 +25,7 @@
     "peerDependencies": {
         "pg": "^4.5.0",
         "pg-hstore": "2.3.*",
-        "bi-service": ">=0.15.3"
+        "bi-service": ">=0.15.3 || ^1.0.0-alpha"
     },
     "dependencies": {
         "debug": "^2.2.0",
@@ -35,7 +35,7 @@
         "lodash": "^4.16.2"
     },
     "devDependencies": {
-        "bi-service": "^0.16.2",
+        "bi-service": "^1.0.0-rc",
         "chai": "^3.5.0",
         "pg": "^4.5.0",
         "pg-hstore": "2.3.*",
