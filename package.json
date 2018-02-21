@@ -1,6 +1,6 @@
 {
     "name": "bi-service-sequelize",
-    "version": "0.1.2",
+    "version": "0.2.0",
     "description": "sequelize integration plugin for bi-service based projects",
     "main": "index.js",
     "scripts": {
@@ -29,7 +29,7 @@
     },
     "dependencies": {
         "debug": "^2.2.0",
-        "sequelize": "^3.27.0",
+        "sequelize": "^3.31.2",
         "async": "^2.0.1",
         "semver": "^5.1.0",
         "lodash": "^4.16.2"
