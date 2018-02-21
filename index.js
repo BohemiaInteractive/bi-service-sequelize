@@ -28,6 +28,7 @@ var logging = getDebugStrategy();
  * @param {Object}   [options.instanceMethods]
  * @param {Object}   [options.cache=true]
  * @param {Function} [options.logging=console.log]
+ * @param {Object}   [options.dialectOptions]
  *
  * @return {undefined}
  */
@@ -49,9 +50,9 @@ function sequelizeBuilder(options) {
         port: options.port,
         dialect: options.dialect,
         logging: options.logging ? logging && options.logging : logging,
-        dialectOptions: {
+        dialectOptions: _.assign({
             ssl: options.ssl
-        },
+        }, options.dialectOptions || {}),
         pool: {
             max  : options.pool.max,
             min  : options.pool.min,

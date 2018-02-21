@@ -1,3 +1,7 @@
+## FUTURE
+
+* [FIXED] allow to set custom `dialectOptions` to sequelizeBuilder wrapper function
+
 ## 0.2.0
 
 * [CHANGED] sequelize model name format is not altered in any way, previously the name has been coerced to camel case notation
