@@ -1,4 +1,4 @@
-## FUTURE
+## 0.2.1
 
 * [FIXED] allow to set custom `dialectOptions` to sequelizeBuilder wrapper function
 
