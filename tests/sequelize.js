@@ -94,6 +94,9 @@ describe('sequelizeBuilder', function() {
                 max: 100,
                 idle: 10
             },
+            dialectOptions: {
+                customOpt: 'value'
+            },
             ssl: true
         };
 
@@ -105,6 +108,7 @@ describe('sequelizeBuilder', function() {
         sequelize.config.should.have.property('host', options.host);
         sequelize.config.should.have.property('pool').that.is.eql(options.pool);
         sequelize.config.should.have.deep.property('dialectOptions.ssl', options.ssl);
+        sequelize.config.should.have.deep.property('dialectOptions.customOpt', options.dialectOptions.customOpt);
     });
 
     it('should add cache support to the created sequelize object', function() {
